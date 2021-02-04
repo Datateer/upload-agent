@@ -70,7 +70,11 @@ feeds: 3
 Feed "abc" will upload to provider/source/feed
 ```
 
-
+## Data File Requirements
+- The data lake can ingest CSV files only
+- The first row of the data file must contain header names
+- Adding new data fields or removing  data fields are both supported
+- You should strive to be consistent with your header names over time. The data lake can handle changes, but it will likely confuse anyone using the feeds
 ## Configuration - detailed info
 Configuration can be handled completely through the `datateer config` commands. If you need more details, this section provides more details on how configuration works and where it is stored. 
 
