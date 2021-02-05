@@ -31,7 +31,7 @@ def save_feed(key, feed, path: str=DEFAULT_PATH):
     config = load_config(path)
     if 'upload-agent' not in config:
         raise click.ClickException('Could not find configuration. Run "datateer config upload-agent" before configuring any feeds"')
-    if 'feeds' not in config:
+    if 'feeds' not in config['upload-agent']:
         config['upload-agent']['feeds'] = {}
     config['upload-agent']['feeds'][key] = feed
 
@@ -39,5 +39,8 @@ def save_feed(key, feed, path: str=DEFAULT_PATH):
 
 def get_feed(key, path: str=DEFAULT_PATH):
     config = load_config(path)
-    return config.get('upload-agent', {}).get('feeds', {}).get(key)
+    feed = config.get('upload-agent', {}).get('feeds', {}).get(key)
+    if not feed:
+        raise click.ClickException(f'Feed with key {key} does not exist')
+    return feed
     

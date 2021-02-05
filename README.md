@@ -18,11 +18,8 @@ All data in the data lake has the following metadata:
 
 ## Commands
 ### Uploading
-#### Upload a single file
+#### Upload a file
 `datateer upload orders_feed ./my_exported_data/orders.csv` will upload the file at `./my_exported_data/orders.csv` using the feed key `orders_feed`
-
-#### Upload a directory of multiple files
-`datateer upload orders_feed ./my_exported_data/orders/` will upload the files found in `./myexported_data/orders/` using the feed key `orders_feed`
 
 ### Configuring
 #### Configure the upload agent

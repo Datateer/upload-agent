@@ -16,3 +16,4 @@ SAMPLE_CONFIG = {
     },
 }
 
+KEY_TEMPLATE = '{provider}/{source}/{feed}/export_date={export_date}/{file}'

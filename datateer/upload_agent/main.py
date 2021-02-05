@@ -4,6 +4,8 @@ import click
 
 # import datateer.upload_agent.config as config
 from .config import load_config, get_feed, save_config, save_feed, DEFAULT_PATH as default_config_path
+from .upload import upload as upload_file
+
 config = load_config()
 
 @click.group()
@@ -111,6 +113,6 @@ def feed(feed, feed_key, provider, source):
 @click.argument('feed-key')
 @click.argument('path')
 def upload(feed_key, path):
-    pass
+    upload_file(feed_key, path)
 
 
