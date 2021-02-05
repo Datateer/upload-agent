@@ -27,7 +27,7 @@ All data in the data lake has the following metadata:
 ### Configuring
 #### Configure the upload agent
 `datateer config upload-agent` will ask you a series of questions to configure your agent
-```
+```yaml
 Datateer client code:
 Raw bucket name:
 Access key:
@@ -39,10 +39,10 @@ If you need to reconfigure the agent, just rerun `datateer config upload-agent`
 #### Configure a new feed
 `datateer config feed` will ask a series of questions to configure a new feed
 ```yaml
-Provider code: xyz
-Data Source code: internal_app1
-Feed code: orders
-Feed key (leave blank to make the same as the Feed code) [orders]: orders_feed
+Provider: xyz
+Data Source: internal_app1
+Feed: orders
+Feed key [orders]: orders_feed
 ```
 
 #### Reconfigure an existing feed
@@ -91,18 +91,16 @@ upload-agent:
   raw-bucket: xyz-pipeline-raw-202012331213123432341213
   access-key: ABC***
   access-secret: 123***
-
-# Option 1
   feeds:
-    - key: customers
+    customers:
       provider: xyz
       source: internal_app1
       feed: customers
-    - key: orders_feed
+    orders_feed:
       provider: xyz
       source: internal_app1
       feed: orders
-    - key: leads
+    leads:
       provider: salesforce
       source: salesforce
       feed: leads

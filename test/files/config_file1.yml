@@ -1,0 +1,18 @@
+client-code: xyz
+upload-agent: 
+  raw-bucket: xyz-pipeline-raw-202012331213123432341213
+  access-key: ABCABC
+  access-secret: '123123'
+  feeds:
+    customers:
+      provider: xyz
+      source: internal_app1
+      feed: customers
+    orders_feed:
+      provider: xyz
+      source: internal_app1
+      feed: orders
+    leads:
+      provider: salesforce
+      source: salesforce
+      feed: leads
