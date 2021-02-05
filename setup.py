@@ -9,4 +9,6 @@
 # )
 
 import setuptools
-setuptools.setup()
+setuptools.setup(
+    packages=['datateer.upload_agent']
+)

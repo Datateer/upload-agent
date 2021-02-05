@@ -41,8 +41,10 @@ def test_command_config_feed_show_option_errors_if_not_exist(mock_load_config, c
 
 def test_command_upload_handles_feed_key_and_path_arguments(runner):
     result = runner.invoke(cli, ['upload', 'FEED-KEY', 'PATH'])
-    
-    assert result.exit_code == 0
+
+    print(result.output)
+    assert result.exit_code == 1
+    assert 'Feed with key FEED-KEY does not exist'
 
 
 
