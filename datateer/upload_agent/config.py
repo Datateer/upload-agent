@@ -37,4 +37,7 @@ def save_feed(key, feed, path: str=DEFAULT_PATH):
 
     save_config(config)
 
+def get_feed(key, path: str=DEFAULT_PATH):
+    config = load_config(path)
+    return config.get('upload-agent', {}).get('feeds', {}).get(key)
     

@@ -46,7 +46,7 @@ Feed key [orders]: orders_feed
 ```
 
 #### Reconfigure an existing feed
-`datateer config feed orders_feed` will rerun the configuration questions for the feed with the key `orders_feed`
+`datateer config feed --update orders_feed` will rerun the configuration questions for the feed with the key `orders_feed`
 
 #### Show config
 `datateer config upload-agent --show` will show you your existing configuration
