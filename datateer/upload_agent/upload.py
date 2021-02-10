@@ -14,7 +14,7 @@ def format_s3_key(feed_key, file_name):
         provider=feed['provider'],
         source=feed['source'],
         feed=feed['feed'],
-        export_date=date.today().strftime('%Y-%d-%m'),
+        export_date=date.today().strftime('%Y-%m-%d'),
         file=file_name
     )
 
