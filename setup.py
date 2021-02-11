@@ -8,7 +8,10 @@
 #     long_description=open('README.md').read(),
 # )
 
-import setuptools
-setuptools.setup(
-    packages=['datateer.upload_agent']
-)
+from setuptools import setup
+setup()
+
+# import setuptools
+# setuptools.setup(
+#     packages=['datateer.upload_agent']
+# )

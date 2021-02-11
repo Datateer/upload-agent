@@ -6,3 +6,6 @@ twine
 pytest
 pytest-watch
 freezegun
+pyyaml
+botocore
+boto3
