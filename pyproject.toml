@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "datateer-upload-agent"
-version = "0.0.0"
+version = "0.1.0"
 description = "An agent that can be installed inside a firewall or VPN and used to push data to Datateer"
 authors = ["Datateer <dev@datateer.com>"]
 
