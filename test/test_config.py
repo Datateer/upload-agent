@@ -3,9 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from datateer.upload_agent import config
-from datateer.upload_agent.config import load_config, save_config, save_feed
-import datateer.upload_agent.constants as constants
+from datateer_upload_agent import config
+from datateer_upload_agent.config import load_config, save_config, save_feed
+import datateer_upload_agent.constants as constants
 
 TEST_FILES_DIR = Path(__file__).resolve().parent / 'files'
 

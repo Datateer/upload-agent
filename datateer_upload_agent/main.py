@@ -1,14 +1,16 @@
 import json 
+import pkg_resources
 
 import click
 
-# import datateer.upload_agent.config as config
+# import datateer_upload_agent.config as config
 from .config import load_config, get_feed, save_config, save_feed, DEFAULT_PATH as default_config_path
 from .upload import upload as upload_file
 
 config = load_config()
 
 @click.group()
+@click.version_option(pkg_resources.get_distribution('datateer-upload-agent').version)
 @click.pass_context
 def cli(ctx):
     ctx.ensure_object(dict)
@@ -50,16 +52,6 @@ def upload_agent(access_key, access_secret, client_code, raw_bucket):
     click.echo(f'Saved configuration to {default_config_path}')
 
 
-def show_feed_config(ctx, param, value):
-    if value:
-        config = load_config()
-        feed = get_feed(value)
-        if not feed:
-            raise click.ClickException(f'Feed with key {value} does not exist')
-        print(json.dumps(feed, indent=4))
-        ctx.exit()
-
-
 feed_to_update = None
 feed_key = None
 def cache_feed_key(ctx, param, value):
@@ -92,7 +84,6 @@ def get_feed_attribute_default(param):
 
 @config_group.command()
 @click.option('-u', '--update', 'feed_key', is_eager=True, default=None, callback=cache_feed_key, help='Update the feed that has this key value')
-@click.option('-s', '--show', is_eager=True, callback=show_feed_config, expose_value=False, default=False, help="Shows the configuration for the feed that has this key value")
 @click.option('-p', '--provider', prompt=True, default=lambda: get_feed_attribute_default('provider'), help="A provider is an organization that provides a data feed. If this is an internal data feed, leave blank to use your client code")
 @click.option('-d', '--source', prompt=True, default=lambda: get_feed_attribute_default('source'), help="A provider can own one or more systems or applications that are a source of data")
 @click.option('-f', '--feed', prompt=True, default=lambda: get_feed_attribute_default('feed'), help='A data source can provide one or more feeds')
@@ -106,6 +97,7 @@ def feed(feed, feed_key, provider, source):
         'feed': feed
     }
     save_feed(feed_key, feed)
+    print(f'Saved configuration for {provider}/{source}/{feed_key}')
 
 
 

@@ -1,3 +1,25 @@
+[tool.poetry]
+name = "datateer-upload-agent"
+version = "v0.2.0"
+description = "An agent that can be installed inside a firewall or VPN and used to push data to Datateer"
+authors = ["Datateer <dev@datateer.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+boto3 = "^1.20.49"
+click = "^8.0.3"
+PyYAML = "^6.0"
+coverage = "^6.5.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+pytest = "^7.0.0"
+pytest-watch = "^4.2.0"
+freezegun = "^1.1.0"
+
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+datateer = "datateer_upload_agent.main:cli"
