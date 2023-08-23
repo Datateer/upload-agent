@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "datateer-upload-agent"
-version = "0.1.0"
+version = "0.3.0"
 description = "An agent that can be installed inside a firewall or VPN and used to push data to Datateer"
 authors = ["Datateer <dev@datateer.com>"]
 
@@ -26,10 +26,8 @@ build-backend = "poetry.core.masonry.api"
 datateer = "datateer_upload_agent.main:cli"
 
 [tool.semantic_release]
-version_variable = [
-    # "dr_sven/__init__.py:__version__",
-    "pyproject.toml:version"
-]
+version_toml = ["pyproject.toml:tool.poetry.version",]
+
 branch = "main"
 upload_to_pypi = true
 upload_to_release = true
