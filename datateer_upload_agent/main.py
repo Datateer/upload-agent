@@ -5,7 +5,7 @@ import click
 
 # import datateer_upload_agent.config as config
 from .config import load_config, get_feed, save_config, save_feed, DEFAULT_PATH as default_config_path
-from .upload import upload as upload_file
+from .uploader.upload import upload as upload_file
 
 config = load_config()
 
@@ -36,13 +36,15 @@ def show_upload_agent_config(ctx, param, value):
 
 @config_group.command()
 @click.option('-s', '--show', is_flag=True, is_eager=True, callback=show_upload_agent_config, expose_value=False, default=False, help="Shows the configuration instead of updating it")
+@click.option('-p', '--cloud-platform', prompt=True, type=click.Choice(['s3', 'gcs']), default=lambda: config.get('cloud-platform'), help="Enter s3 if you are uploading to an AWS S3 bucket, enter gcs if uploading to GCP GCS bucket")
 @click.option('-c', '--client-code', prompt=True, default=lambda: config.get('client-code'), help="Your three-character code from Datateer")
 @click.option('-b', '--raw-bucket', prompt='Raw bucket name', default=lambda: config.get('upload-agent', {}).get('raw-bucket'), help='The name of your data lake\'s raw bucket')
 @click.option('-k', '--access-key', prompt=True, default=lambda: config.get('upload-agent', {}).get('access-key'), help='The AWS access key of your upload agent')
 @click.option('-a', '--access-secret', prompt=True, default=lambda: config.get('upload-agent', {}).get('access-secret'), help='The AWS secret key of your upload agent')
-def upload_agent(access_key, access_secret, client_code, raw_bucket):
+def upload_agent(access_key, access_secret, client_code, raw_bucket, cloud_platform):
     config = load_config()
     config['client-code'] = client_code
+    config['cloud-platform'] = cloud_platform
     config['upload-agent'] = {
         'raw-bucket': raw_bucket,
         'access-key': access_key,
@@ -105,6 +107,7 @@ def feed(feed, feed_key, provider, source):
 @click.argument('feed-key')
 @click.argument('path')
 def upload(feed_key, path):
+    
     upload_file(feed_key, path)
 
 

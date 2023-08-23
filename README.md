@@ -84,7 +84,7 @@ Feed "abc" will upload to provider/source/feed
 
 ## Data File Requirements
 
-- The data lake can ingest CSV files only
+- The data lake supports CSV, TSV, and JSONL files
 - The first row of the data file must contain header names
 - Adding new data fields or removing data fields are both supported
 - You should strive to be consistent with your header names over time. The data lake can handle changes, but it will likely confuse anyone using the feeds
@@ -124,3 +124,11 @@ upload-agent:
       source: salesforce
       feed: leads
 ```
+
+
+## Development
+To develop in this repo:
+1. Install poetry and activate shell with `poetry shell`
+2. Run `poetry install`
+3. To test run `pytest` or `ptw`
+4. To run locally, install with `pip install -e .`

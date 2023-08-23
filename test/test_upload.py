@@ -1,4 +1,4 @@
-from datateer_upload_agent.upload import format_s3_key
+from datateer_upload_agent.uploader.upload import format_s3_key
 from unittest.mock import patch
 
 from freezegun import freeze_time
