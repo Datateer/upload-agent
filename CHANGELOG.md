@@ -2,6 +2,13 @@
 
 
 
+## v0.4.0 (2023-08-23)
+
+### Feature
+
+* feat: version bump ([`d9d41fc`](https://github.com/Datateer/upload-agent/commit/d9d41fc5a58bdc233d4d071cee855ba04bec646d))
+
+
 ## v0.3.0 (2023-08-23)
 
 ### Feature
