@@ -5,6 +5,7 @@ SAMPLE_FEED = {
 }
 
 SAMPLE_CONFIG = {
+    "cloud-platform": "s3",
     "client-code": "SAMPLE-CLIENT-CODE",
     "upload-agent": {
         "raw-bucket": "SAMPLE-RAW-BUCKET",

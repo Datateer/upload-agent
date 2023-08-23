@@ -33,7 +33,7 @@ def test_command_upload_handles_feed_key_and_path_arguments(runner):
 def test_config_upload_agent_prompts_show_defaults_if_config_exists(runner, config):
     defaults = config
 
-    result = runner.invoke(cli, ['config', 'upload-agent'], input='CLIENT-CODE\nRAW-BUCKET\nACCESS-KEY\nACCESS-SECRET')
+    result = runner.invoke(cli, ['config', 'upload-agent'], input='s3\nCLIENT-CODE\nRAW-BUCKET\nACCESS-KEY\nACCESS-SECRET')
     
     print(result.output)
     assert result.exit_code == 0
