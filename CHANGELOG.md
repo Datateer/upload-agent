@@ -2,6 +2,19 @@
 
 
 
+## v0.3.0 (2023-08-23)
+
+### Feature
+
+* feat: bump version ([`31b8d2a`](https://github.com/Datateer/upload-agent/commit/31b8d2aff08a125380d22c338b92b9566856bf7e))
+
+* feat: bump version ([`8165e56`](https://github.com/Datateer/upload-agent/commit/8165e56447ee0fc93a0e45c7d5b3fbe896afa318))
+
+### Unknown
+
+* Merge branch &#39;main&#39; of github.com:Datateer/upload-agent ([`1b607cc`](https://github.com/Datateer/upload-agent/commit/1b607cccaae189e0704e9a96d23deee8d85c34d7))
+
+
 ## v0.2.0 (2023-08-23)
 
 ### Feature
