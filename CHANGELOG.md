@@ -2,6 +2,17 @@
 
 
 
+## v0.4.1 (2023-08-23)
+
+### Fix
+
+* fix: fix build ([`b1e0a8a`](https://github.com/Datateer/upload-agent/commit/b1e0a8aeb51f4a97002e8c50a5cf2e46fd625dd9))
+
+### Unknown
+
+* Merge branch &#39;main&#39; of github.com:Datateer/upload-agent ([`cd129b3`](https://github.com/Datateer/upload-agent/commit/cd129b3ae88da0b53ae2990344714782c31e98cd))
+
+
 ## v0.4.0 (2023-08-23)
 
 ### Feature
