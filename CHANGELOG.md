@@ -2,6 +2,15 @@
 
 
 
+## v0.5.1 (2023-08-23)
+
+### Fix
+
+* fix: add readme ([`3bcac7a`](https://github.com/Datateer/upload-agent/commit/3bcac7a708808582c13892402d0948eb4bb65839))
+
+* fix: build ([`dac132b`](https://github.com/Datateer/upload-agent/commit/dac132b9ad0dba7181ece94a2c49bb7a7944a99a))
+
+
 ## v0.5.0 (2023-08-23)
 
 ### Feature
