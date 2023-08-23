@@ -5,8 +5,8 @@ from botocore.exceptions import ClientError
 import boto3
 import click
 
-from .config import get_feed, load_config
-from .constants import KEY_TEMPLATE
+from ..config import get_feed, load_config
+from ..constants import KEY_TEMPLATE
 
 def format_s3_key(feed_key, file_name):
     feed = get_feed(feed_key)
