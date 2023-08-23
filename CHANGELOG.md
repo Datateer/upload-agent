@@ -2,6 +2,13 @@
 
 
 
+## v0.5.2 (2023-08-23)
+
+### Fix
+
+* fix: back to v1 ([`f60aa30`](https://github.com/Datateer/upload-agent/commit/f60aa30f9deaee6f796b1cb8ba284c3a7f958ece))
+
+
 ## v0.5.1 (2023-08-23)
 
 ### Fix
